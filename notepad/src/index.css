@@ -12,12 +12,27 @@ code {
     monospace;
   }
 
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-mode{
+  background-color: black;
+}
+
+.dark-mode h1{
+  color: white;
+}
+
 .container{
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  min-height: 100vh;
 }
 
 .note-list{
@@ -60,6 +75,8 @@ textarea:focus{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
+  /* white-space is used to keep the indentation in the note */
 }
 
 .note-footer{
@@ -67,3 +84,33 @@ textarea:focus{
   align-items:center;
   justify-content: space-between;
 }
+
+.search{
+  display: flex;
+  align-items: center;
+  background-color: rgb(233,233,233);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 1.5em;
+}
+
+.search input{
+  border: none;
+  background-color: rgb(233,233,233);
+  width:100%
+}
+
+.search input:focus{
+  outline: none;
+}
+
+.search-button{
+  border: none;
+  background-color: rgb(233,233,233);
+  border-radius: 10px;
+}
+
+.search-button:hover{
+  background-color: #fcfcfc;
+}
+

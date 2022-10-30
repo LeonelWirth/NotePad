@@ -2,8 +2,11 @@ import { useState } from "react";
 
 function AddNote({handleAddNote}) {
     const [noteText, setNoteText] = useState("");
+    const characterLimit = 200
     const handleChage = (event) => {
-        setNoteText(event.target.value)
+        if(characterLimit - event.target.value.length >= 0){
+            setNoteText(event.target.value)
+        }
     }
     const handleSaveClick = () =>{
         if(noteText.trim().length>0){// Verifico si son enters y espacios, para no crear notas vacias
@@ -22,7 +25,7 @@ function AddNote({handleAddNote}) {
                 onChange={handleChage}
             ></textarea>
             <div className="note-footer">
-                <small>character counter</small>
+                <small>{characterLimit - noteText.length} Remaining</small>
                 <button className="button" onClick={handleSaveClick}>Save</button>
             </div>
         </div>
